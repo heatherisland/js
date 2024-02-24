@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Magical Mystery Theater</title>
+</head>
+
+<body>
+    <h1>Magical Mystery Theater</h1>
+    <button type="button" onclick="buyTicket()">Purchase Ticket</button>
+    <script>
+
+        const generalAdm = 20;
+        const discountedAdm = 10;
+
+        function buyTicket() {
+            let age = prompt('What is your age?');
+            let ticket = getBaseTicketCost(age);
+            const matinee = confirm('Is this a matinee showing?');
+            if (matinee == true) {
+                alert('Your ticket price is $' + (ticket - 3));
+            } else {
+                alert('Your ticket price is $' + ticket);
+            }
+        }
+
+        function getBaseTicketCost(age) {
+
+            if ((age <= 12) || (age >= 65)) {
+                return discountedAdm;
+            } else {
+                return generalAdm;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
